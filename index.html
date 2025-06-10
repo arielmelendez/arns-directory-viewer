@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ArNS ANT Viewer</title>
+    <style>
+      :root {
+        --primary-purple: #6A82FC;
+        --secondary-purple: #4F52FF;
+        --deep-purple: #1C1B53;
+        --text-color: #FFFFFF;
+        --text-secondary: #9BA1A5;
+        --bg-color: #050505;
+        --border-color: #333333;
+        --panel-bg: #101010;
+      }
+      body {
+        font-family: "Fira Mono", "Consolas", "Menlo", "Monaco",
+          "Liberation Mono", "Courier New", monospace;
+        padding: 2rem;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+      }
+      h1 {
+        font-size: 1.5rem;
+        color: var(--primary-purple);
+      }
+      .loading {
+        color: var(--text-secondary);
+      }
+      table {
+        border-collapse: collapse;
+        margin-top: 1rem;
+        width: 100%;
+      }
+      th,
+      td {
+        border: 1px solid var(--border-color);
+        padding: 0.5rem;
+        text-align: left;
+      }
+      th {
+        background-color: var(--deep-purple);
+        color: var(--text-color);
+      }
+      .settings {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        border: 1px solid var(--border-color);
+        background-color: var(--panel-bg);
+        border-radius: 4px;
+      }
+      .settings input {
+        margin-right: 0.5rem;
+        padding: 0.5rem;
+        font-family: inherit;
+        border: 1px solid var(--border-color);
+        background-color: #191919;
+        color: var(--text-color);
+        border-radius: 4px;
+      }
+      .settings label {
+        display: inline-block;
+        width: 150px;
+        margin-bottom: 0.5rem;
+        color: var(--text-color);
+      }
+      .settings button {
+        margin-top: 0.5rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        margin-right: 0.5rem;
+        background-color: var(--primary-purple);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-weight: bold;
+        transition: background-color 0.2s;
+      }
+      .settings button:hover {
+        background-color: var(--secondary-purple);
+      }
+      #restoreDefaults {
+        background-color: #1C1C1C;
+        color: var(--text-secondary);
+        border: 1px solid var(--border-color);
+      }
+      #restoreDefaults:hover {
+        background-color: #2A2A2A;
+      }
+      a {
+        color: var(--primary-purple);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      tr:nth-child(even) {
+        background-color: rgba(28, 27, 83, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ArNS ANT Viewer</h1>
+    
+    <div class="settings">
+      <div>
+      <label for="arnsName">ArNS Name:</label>
+      <input type="text" id="arnsName" placeholder="Enter ArNS name" style="width: 300px;">
+      </div>
+      <div>
+      <label for="gatewayUrl">Gateway URL:</label>
+      <input type="text" id="gatewayUrl" placeholder="Enter Arweave Gateway URL" style="width: 300px;">
+      </div>
+      <div>
+      <label for="cuUrl">CU URL:</label>
+      <input type="text" id="cuUrl" placeholder="Enter CU URL" style="width: 300px;">
+      </div>
+      <button id="applySettings">Apply Settings</button>
+      <button id="restoreDefaults">Restore Defaults</button>
+    </div>
+    
+    <p id="status" class="loading">Loading ANT records...</p>
+    <div id="records"></div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

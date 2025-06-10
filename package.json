@@ -1,0 +1,20 @@
+{
+  "name": "arns-ant-viewer",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && permaweb-deploy --deploy-folder ./dist --arns-name ariel --undername directory"
+  },
+  "devDependencies": {
+    "permaweb-deploy": "^2.1.0",
+    "rollup-plugin-visualizer": "^6.0.3",
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "@ar.io/sdk": "^3.13.0"
+  }
+}
