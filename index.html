@@ -98,6 +98,18 @@
       tr:nth-child(even) {
         background-color: rgba(28, 27, 83, 0.1);
       }
+      #filterBar input,
+      #filterBar select {
+        padding: 0.5rem;
+        font-family: inherit;
+        border: 1px solid var(--border-color);
+        background-color: #191919;
+        color: var(--text-color);
+        border-radius: 4px;
+      }
+      #recordCount {
+        color: var(--text-secondary);
+      }
     </style>
   </head>
   <body>
@@ -121,6 +133,18 @@
     </div>
     
     <p id="status" class="loading">Loading ANT records...</p>
+    <div id="filterBar" style="display:flex;align-items:center;gap:0.5rem;margin-top:0.5rem;">
+      <label for="filterInput">Filter:</label>
+      <input type="text" id="filterInput" placeholder="Type to filter" style="flex:1;min-width:150px;"/>
+      <label for="filterField">Filter By:</label>
+      <select id="filterField">
+        <option value="under_name">Under_name</option>
+        <option value="txid">Transaction ID</option>
+        <option value="ttl">TTL</option>
+        <option value="all">All</option>
+      </select>
+      <span id="recordCount" style="margin-left:auto;"></span>
+    </div>
     <div id="records"></div>
     <script type="module" src="/main.js"></script>
   </body>
